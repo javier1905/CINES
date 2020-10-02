@@ -1,0 +1,22 @@
+  <xsd:choice minOccurs="0" maxOccurs="unbounded">
+         <xsd:element name="CellContents" type="CellContentsType" minOccurs="0" maxOccurs="1"/>
+         <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:choice>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+   </xsd:complexType>
+   <xsd:complexType name="TablixHierarchyType">
+      <xsd:choice minOccurs="1" maxOccurs="unbounded">
+         <xsd:element name="TablixMembers" type="TablixMembersType" minOccurs="1" maxOccurs="1"/>
+         <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:choice>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+   </xsd:complexType>
+   <xsd:complexType name="TablixMembersType">
+      <xsd:sequence minOccurs="1" maxOccurs="unbounded">
+         <xsd:element name="TablixMember" type="TablixMemberType" minOccurs="1" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+   </xsd:complexType>
+   <xsd:complexType name="TablixMemberType">
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+         <xsd:element name="Gro

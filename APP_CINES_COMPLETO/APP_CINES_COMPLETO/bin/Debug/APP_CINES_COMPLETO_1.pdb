@@ -1,0 +1,1035 @@
+ value="None"/>
+                  <xsd:enumeration value="Start"/>
+                  <xsd:enumeration value="End"/>
+                  <xsd:enumeration value="StartAndEnd"/>
+                  <xsd:enumeration value="Between"/>
+               </xsd:restriction>
+            </xsd:simpleType>
+         </xsd:element>
+         <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:choice>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+   </xsd:complexType>
+   <xsd:complexType name="GaugePanelType">
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+         <!--DataRegionTypeStart-->
+         <xsd:element name="Style" type="StyleType" minOccurs="0"/>
+         <xsd:element name="SortExpressions" type="SortExpressionsType" minOccurs="0"/>
+         <xsd:element name="ActionInfo" type="ActionInfoType" minOccurs="0"/>
+         <xsd:element name="Top" type="SizeType" minOccurs="0"/>
+         <xsd:element name="Left" type="SizeType" minOccurs="0"/>
+         <xsd:element name="Height" type="SizeType" minOccurs="0"/>
+         <xsd:element name="Width" type="SizeType" minOccurs="0"/>
+         <xsd:element name="ZIndex" type="xsd:unsignedInt" minOccurs="0"/>
+         <xsd:element name="Visibility" type="VisibilityType" minOccurs="0"/>
+         <xsd:element name="ToolTip" type="StringLocIDType" minOccurs="0"/>
+         <xsd:element name="DocumentMapLabel" type="StringLocIDType" minOccurs="0"/>
+         <xsd:element name="Bookmark" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="RepeatWith" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="CustomProperties" type="CustomPropertiesType" minOccurs="0"/>
+         <xsd:element name="NoRowsMessage" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="DataSetName" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="PageBreak" type="PageBreakType" minOccurs="0"/>
+         <xsd:element name="PageName" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Filters" type="FiltersType" minOccurs="0"/>
+         <xsd:element name="DataElementName" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="DataElementOutput" minOccurs="0">
+            <xsd:simpleType>
+               <xsd:restriction base="xsd:string">
+                  <xsd:enumeration value="Output"/>
+                  <xsd:enumeration value="NoOutput"/>
+                  <xsd:enumeration value="ContentsOnly"/>
+                  <xsd:enumeration value="Auto"/>
+               </xsd:restriction>
+            </xsd:simpleType>
+         </xsd:element>
+         <!--DataRegionTypeEnd-->
+         <xsd:element name="AntiAliasing" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="TextAntiAliasingQuality" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="AutoLayout" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="ShadowIntensity" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="RadialGauges" type="RadialGaugesType" minOccurs="0"/>
+         <xsd:element name="LinearGauges" type="LinearGaugesType" minOccurs="0"/>
+         <xsd:element name="NumericIndicators" type="NumericIndicatorsType" minOccurs="0"/>
+         <xsd:element name="StateIndicators" type="StateIndicatorsType" minOccurs="0"/>
+         <xsd:element name="GaugeImages" type="GaugeImagesType" minOccurs="0"/>
+         <xsd:element name="GaugeLabels" type="GaugeLabelsType" minOccurs="0"/>
+         <xsd:element name="BackFrame" type="BackFrameType" minOccurs="0"/>
+         <xsd:element name="TopImage" type="TopImageType" minOccurs="0"/>
+         <xsd:element name="GaugeMember" type="GaugeMemberType" minOccurs="0"/>
+         <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:choice>
+      <xsd:attribute name="Name" type="xsd:normalizedString" use="required"/>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+   </xsd:complexType>
+   <xsd:complexType name="GaugeMemberType">
+      <xsd:choice maxOccurs="unbounded">
+         <xsd:element name="Group" type="GroupType" minOccurs="1"/>
+         <xsd:element name="SortExpressions" type="SortExpressionsType" minOccurs="0"/>
+         <xsd:element name="GaugeMember" type="GaugeMemberType" minOccurs="0"/>
+         <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:choice>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+   </xsd:complexType>
+   <xsd:complexType name="GaugeInputValueType">
+      <xsd:choice maxOccurs="unbounded">
+         <xsd:element name="Value" type="xsd:string" minOccurs="1"/>
+         <xsd:element name="Formula" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="MinPercent" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="MaxPercent" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Multiplier" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="AddConstant" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="DataElementName" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="DataElementOutput" minOccurs="0">
+            <xsd:simpleType>
+               <xsd:restriction base="xsd:string">
+                  <xsd:enumeration value="Output"/>
+                  <xsd:enumeration value="NoOutput"/>
+               </xsd:restriction>
+            </xsd:simpleType>
+         </xsd:element>
+         <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:choice>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+   </xsd:complexType>
+   <xsd:complexType name="RadialGaugeType">
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+         <!--GaugeTypeStart-->
+         <!--GaugePanelItemTypeStart-->
+         <xsd:element name="ActionInfo" type="ActionInfoType" minOccurs="0"/>
+         <xsd:element name="ToolTip" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Top" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Left" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Height" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Width" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="ZIndex" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Hidden" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="ParentItem" type="xsd:string" minOccurs="0"/>
+         <!--GaugePanelItemTypeEnd-->
+         <xsd:element name="BackFrame" type="BackFrameType" minOccurs="0"/>
+         <xsd:element name="TopImage" type="TopImageType" minOccurs="0"/>
+         <xsd:element name="ClipContent" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="AspectRatio" type="xsd:string" minOccurs="0"/>
+         <!--GaugeTypeEnd-->
+         <xsd:element name="GaugeScales" type="RadialScalesType" minOccurs="0"/>
+         <xsd:element name="PivotX" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="PivotY" type="xsd:string" minOccurs="0"/>
+         <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:choice>
+      <xsd:attribute name="Name" type="xsd:normalizedString" use="required"/>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+   </xsd:complexType>
+   <xsd:complexType name="LinearGaugeType">
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+         <!--GaugeTypeStart-->
+         <!--GaugePanelItemTypeStart-->
+         <xsd:element name="ActionInfo" type="ActionInfoType" minOccurs="0"/>
+         <xsd:element name="ToolTip" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Top" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Left" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Height" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Width" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="ZIndex" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Hidden" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="ParentItem" type="xsd:string" minOccurs="0"/>
+         <!--GaugePanelItemTypeEnd-->
+         <xsd:element name="BackFrame" type="BackFrameType" minOccurs="0"/>
+         <xsd:element name="TopImage" type="TopImageType" minOccurs="0"/>
+         <xsd:element name="ClipContent" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="AspectRatio" type="xsd:string" minOccurs="0"/>
+         <!--GaugeTypeEnd-->
+         <xsd:element name="GaugeScales" type="LinearScalesType" minOccurs="0"/>
+         <xsd:element name="Orientation" type="xsd:string" minOccurs="0"/>
+         <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:choice>
+      <xsd:attribute name="Name" type="xsd:normalizedString" use="required"/>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+   </xsd:complexType>
+   <xsd:complexType name="NumericIndicatorType">
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+         <!--GaugePanelItemTypeStart-->
+         <xsd:element name="ActionInfo" type="ActionInfoType" minOccurs="0"/>
+         <xsd:element name="ToolTip" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Top" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Left" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Height" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Width" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="ZIndex" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Hidden" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="ParentItem" type="xsd:string" minOccurs="0"/>
+         <!--GaugePanelItemTypeEnd-->
+         <xsd:element name="Style" type="StyleType" minOccurs="0"/>
+         <xsd:element name="GaugeInputValue" type="GaugeInputValueType" minOccurs="0"/>
+         <xsd:element name="MaximumValue" type="GaugeInputValueType" minOccurs="0"/>
+         <xsd:element name="MinimumValue" type="GaugeInputValueType" minOccurs="0"/>
+         <xsd:element name="NumericIndicatorRanges" type="NumericIndicatorRangesType" minOccurs="0"/>
+         <xsd:element name="ResizeMode" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="DecimalDigitColor" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="DecimalDigits" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="DigitColor" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Digits" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="IndicatorStyle" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="LedDimColor" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Multiplier" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="OffString" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="OutOfRangeString" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="SeparatorColor" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="SeparatorWidth" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="ShowDecimalPoint" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="ShowLeadingZeros" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="ShowSign" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="SnappingEnabled" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="SnappingInterval" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="UseFontPercent" type="xsd:string" minOccurs="0"/>
+         <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:choice>
+      <xsd:attribute name="Name" type="xsd:normalizedString" use="required"/>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+   </xsd:complexType>
+   <xsd:complexType name="StateIndicatorType">
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+         <!--GaugePanelItemTypeStart-->
+         <xsd:element name="ActionInfo" type="ActionInfoType" minOccurs="0"/>
+         <xsd:element name="ToolTip" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Top" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Left" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Height" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Width" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="ZIndex" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Hidden" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="ParentItem" type="xsd:string" minOccurs="0"/>
+         <!--GaugePanelItemTypeEnd-->
+         <xsd:element name="Style" type="StyleType" minOccurs="0"/>
+         <xsd:element name="IndicatorStyle" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="IndicatorImage" type="IndicatorImageType" minOccurs="0"/> 
+         <xsd:element name="GaugeInputValue" type="GaugeInputValueType" minOccurs="0"/>
+         <xsd:element name="TransformationType" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="TransformationScope" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="MinimumValue" type="GaugeInputValueType" minOccurs="0"/>
+         <xsd:element name="MaximumValue" type="GaugeInputValueType" minOccurs="0"/>
+         <xsd:element name="IndicatorStates" type="IndicatorStatesType" minOccurs="0"/>
+         <xsd:element name="ResizeMode" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Angle" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="ScaleFactor" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="StateDataElementName" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="StateDataElementOutput" minOccurs="0">
+           <xsd:simpleType>
+             <xsd:restriction base="xsd:string">
+               <xsd:enumeration value="Output"/>
+               <xsd:enumeration value="NoOutput"/>
+             </xsd:restriction>
+           </xsd:simpleType>
+         </xsd:element>
+         <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:choice>
+      <xsd:attribute name="Name" type="xsd:normalizedString" use="required"/>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+   </xsd:complexType>
+
+
+   <xsd:complexType name="GaugeImageType">
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+         <!--GaugePanelItemTypeStart-->
+         <xsd:element name="ActionInfo" type="ActionInfoType" minOccurs="0"/>
+         <xsd:element name="ToolTip" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Top" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Left" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Height" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Width" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="ZIndex" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Hidden" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="ParentItem" type="xsd:string" minOccurs="0"/>
+         <!--GaugePanelItemTypeEnd-->
+         <xsd:element name="Source" type="xsd:string" minOccurs="1"/>
+         <xsd:element name="Value" type="xsd:string" minOccurs="1"/>
+         <xsd:element name="MIMEType" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="TransparentColor" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Transparency" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Angle" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="ResizeMode" type="xsd:string" minOccurs="0"/>
+         <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:choice>
+      <xsd:attribute name="Name" type="xsd:normalizedString" use="required"/>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+   </xsd:complexType>
+   <xsd:complexType name="GaugeLabelType">
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+         <!--GaugePanelItemTypeStart-->
+         <xsd:element name="ActionInfo" type="ActionInfoType" minOccurs="0"/>
+         <xsd:element name="ToolTip" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Top" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Left" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Height" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Width" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="ZIndex" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Hidden" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="ParentItem" type="xsd:string" minOccurs="0"/>
+         <!--GaugePanelItemTypeEnd-->
+         <xsd:element name="Style" type="StyleType" minOccurs="0"/>
+         <xsd:element name="Text" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Angle" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="ResizeMode" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="TextShadowOffset" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="UseFontPercent" type="xsd:string" minOccurs="0"/>
+         <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:choice>
+      <xsd:attribute name="Name" type="xsd:normalizedString" use="required"/>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+   </xsd:complexType>
+   <xsd:complexType name="RadialScaleType">
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+         <!--GaugeScaleTypeStart-->
+         <xsd:element name="Style" type="StyleType" minOccurs="0"/>
+         <xsd:element name="ActionInfo" type="ActionInfoType" minOccurs="0"/>
+         <xsd:element name="ToolTip" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="ScaleRanges" type="ScaleRangesType" minOccurs="0"/>
+         <xsd:element name="ScaleLabels" type="ScaleLabelsType" minOccurs="0"/>
+         <xsd:element name="GaugeMajorTickMarks" type="GaugeTickMarksType" minOccurs="0"/>
+         <xsd:element name="GaugeMinorTickMarks" type="GaugeTickMarksType" minOccurs="0"/>
+         <xsd:element name="CustomLabels" type="CustomLabelsType" minOccurs="0"/>
+         <xsd:element name="MaximumValue" type="GaugeInputValueType" minOccurs="0"/>
+         <xsd:element name="MinimumValue" type="GaugeInputValueType" minOccurs="0"/>
+         <xsd:element name="MaximumPin" type="ScalePinType" minOccurs="0"/>
+         <xsd:element name="MinimumPin" type="ScalePinType" minOccurs="0"/>
+         <xsd:element name="Interval" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="IntervalOffset" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Logarithmic" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="LogarithmicBase" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Multiplier" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Reversed" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Hidden" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Width" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="TickMarksOnTop" type="xsd:string" minOccurs="0"/>
+         <!--GaugeScaleTypeEnd-->
+         <xsd:element name="GaugePointers" type="RadialPointersType" minOccurs="0"/>
+         <xsd:element name="Radius" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="StartAngle" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="SweepAngle" type="xsd:string" minOccurs="0"/>
+         <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:choice>
+      <xsd:attribute name="Name" type="xsd:normalizedString" use="required"/>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+   </xsd:complexType>
+   <xsd:complexType name="LinearScaleType">
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+         <!--GaugeScaleTypeStart-->
+         <xsd:element name="Style" type="StyleType" minOccurs="0"/>
+         <xsd:element name="ActionInfo" type="ActionInfoType" minOccurs="0"/>
+         <xsd:element name="ToolTip" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="ScaleRanges" type="ScaleRangesType" minOccurs="0"/>
+         <xsd:element name="ScaleLabels" type="ScaleLabelsType" minOccurs="0"/>
+         <xsd:element name="GaugeMajorTickMarks" type="GaugeTickMarksType" minOccurs="0"/>
+         <xsd:element name="GaugeMinorTickMarks" type="GaugeTickMarksType" minOccurs="0"/>
+         <xsd:element name="CustomLabels" type="CustomLabelsType" minOccurs="0"/>
+         <xsd:element name="MaximumValue" type="GaugeInputValueType" minOccurs="0"/>
+         <xsd:element name="MinimumValue" type="GaugeInputValueType" minOccurs="0"/>
+         <xsd:element name="MaximumPin" type="ScalePinType" minOccurs="0"/>
+         <xsd:element name="MinimumPin" type="ScalePinType" minOccurs="0"/>
+         <xsd:element name="Interval" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="IntervalOffset" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Logarithmic" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="LogarithmicBase" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Multiplier" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Reversed" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Hidden" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Width" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="TickMarksOnTop" type="xsd:string" minOccurs="0"/>
+         <!--GaugeScaleTypeEnd-->
+         <xsd:element name="GaugePointers" type="LinearPointersType" minOccurs="0"/>
+         <xsd:element name="StartMargin" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="EndMargin" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Position" type="xsd:string" minOccurs="0"/>
+         <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:choice>
+      <xsd:attribute name="Name" type="xsd:normalizedString" use="required"/>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+   </xsd:complexType>
+   <xsd:complexType name="RadialPointerType">
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+         <!--GaugePointerTypeStart-->
+         <xsd:element name="Style" type="StyleType" minOccurs="0"/>
+         <xsd:element name="ActionInfo" type="ActionInfoType" minOccurs="0"/>
+         <xsd:element name="ToolTip" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="GaugeInputValue" type="GaugeInputValueType" minOccurs="0"/>
+         <xsd:element name="PointerImage" type="PointerImageType" minOccurs="0"/>
+         <xsd:element name="BarStart" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="DistanceFromScale" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="MarkerLength" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="MarkerStyle" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Placement" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="SnappingEnabled" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="SnappingInterval" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Hidden" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Width" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Type" type="xsd:string" minOccurs="0"/>
+         <!--GaugePointerTypeEnd-->
+         <xsd:element name="PointerCap" type="PointerCapType" minOccurs="0"/>
+         <xsd:element name="NeedleStyle" type="xsd:string" minOccurs="0"/>
+         <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:choice>
+      <xsd:attribute name="Name" type="xsd:normalizedString" use="required"/>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+   </xsd:complexType>
+   <xsd:complexType name="LinearPointerType">
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+         <!--GaugePointerTypeStart-->
+         <xsd:element name="Style" type="StyleType" minOccurs="0"/>
+         <xsd:element name="ActionInfo" type="ActionInfoType" minOccurs="0"/>
+         <xsd:element name="ToolTip" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="GaugeInputValue" type="GaugeInputValueType" minOccurs="0"/>
+         <xsd:element name="PointerImage" type="PointerImageType" minOccurs="0"/>
+         <xsd:element name="BarStart" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="DistanceFromScale" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="MarkerLength" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="MarkerStyle" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Placement" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="SnappingEnabled" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="SnappingInterval" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Hidden" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Width" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Type" type="xsd:string" minOccurs="0"/>
+         <!--GaugePointerTypeEnd-->
+         <xsd:element name="Thermometer" type="ThermometerType" minOccurs="0"/>
+         <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:choice>
+      <xsd:attribute name="Name" type="xsd:normalizedString" use="required"/>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+   </xsd:complexType>
+   <xsd:complexType name="ThermometerType">
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+         <xsd:element name="Style" type="StyleType" minOccurs="0"/>
+         <xsd:element name="BulbOffset" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="BulbSize" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="ThermometerStyle" type="xsd:string" minOccurs="0"/>
+         <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:choice>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+   </xsd:complexType>
+   <xsd:complexType name="PointerCapType">
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+         <xsd:element name="Style" type="StyleType" minOccurs="0"/>
+         <xsd:element name="CapImage" type="CapImageType" minOccurs="0"/>
+         <xsd:element name="OnTop" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Reflection" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="CapStyle" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Hidden" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Width" type="xsd:string" minOccurs="0"/>
+         <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:choice>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+   </xsd:complexType>
+   <xsd:complexType name="NumericIndicatorRangeType">
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+         <xsd:element name="StartValue" type="GaugeInputValueType" minOccurs="0"/>
+         <xsd:element name="EndValue" type="GaugeInputValueType" minOccurs="0"/>
+         <xsd:element name="DecimalDigitColor" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="DigitColor" type="xsd:string" minOccurs="0"/>
+         <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:choice>
+      <xsd:attribute name="Name" type="xsd:normalizedString" use="required"/>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+   </xsd:complexType>
+   <xsd:complexType name="IndicatorStateType">
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+         <xsd:element name="StartValue" type="GaugeInputValueType" minOccurs="0"/>
+         <xsd:element name="EndValue" type="GaugeInputValueType" minOccurs="0"/>
+         <xsd:element name="Color" type="xsd:string" minOccurs="1"/>
+         <xsd:element name="ScaleFactor" type="xsd:string" minOccurs="1"/>
+         <xsd:element name="IndicatorStyle" type="xsd:string" minOccurs="1"/>
+         <xsd:element name="IndicatorImage" type="IndicatorImageType" minOccurs="0"/>
+         <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:choice>
+      <xsd:attribute name="Name" type="xsd:normalizedString" use="required"/>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+   </xsd:complexType>
+   <xsd:complexType name="ScaleRangeType">
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+         <xsd:element name="Style" type="StyleType" minOccurs="0"/>
+         <xsd:element name="BackgroundGradientType" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="ActionInfo" type="ActionInfoType" minOccurs="0"/>
+         <xsd:element name="ToolTip" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="StartValue" type="GaugeInputValueType" minOccurs="0"/>
+         <xsd:element name="EndValue" type="GaugeInputValueType" minOccurs="0"/>
+         <xsd:element name="StartWidth" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="EndWidth" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="DistanceFromScale" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="InRangeBarPointerColor" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="InRangeLabelColor" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="InRangeTickMarksColor" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Placement" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Hidden" type="xsd:string" minOccurs="0"/>
+         <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:choice>
+      <xsd:attribute name="Name" type="xsd:normalizedString" use="required"/>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+   </xsd:complexType>
+   <xsd:complexType name="ScaleLabelsType">
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+         <xsd:element name="Style" type="StyleType" minOccurs="0"/>
+         <xsd:element name="Interval" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="IntervalOffset" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="AllowUpsideDown" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="DistanceFromScale" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="FontAngle" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Placement" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="RotateLabels" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="ShowEndLabels" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Hidden" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="UseFontPercent" type="xsd:string" minOccurs="0"/>
+         <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:choice>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+   </xsd:complexType>
+   <xsd:complexType name="CustomLabelType">
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+         <xsd:element name="Style" type="StyleType" minOccurs="0"/>
+         <xsd:element name="TickMarkStyle" type="TickMarkStyleType" minOccurs="0"/>
+         <xsd:element name="Text" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="AllowUpsideDown" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="DistanceFromScale" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="FontAngle" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Placement" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="RotateLabel" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Value" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Hidden" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="UseFontPercent" type="xsd:string" minOccurs="0"/>
+         <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:choice>
+      <xsd:attribute name="Name" type="xsd:normalizedString" use="required"/>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+   </xsd:complexType>
+   <xsd:complexType name="TickMarkStyleType">
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+         <xsd:element name="Style" type="StyleType" minOccurs="0"/>
+         <xsd:element name="TickMarkImage" type="TopImageType" minOccurs="0"/>
+         <xsd:element name="DistanceFromScale" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Placement" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="EnableGradient" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="GradientDensity" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Length" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Width" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Shape" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Hidden" type="xsd:string" minOccurs="0"/>
+         <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:choice>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+   </xsd:complexType>
+   <xsd:complexType name="GaugeTickMarksType">
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+         <!--TickMarkStyleTypeStart-->
+         <xsd:element name="Style" type="StyleType" minOccurs="0"/>
+         <xsd:element name="TickMarkImage" type="TopImageType" minOccurs="0"/>
+         <xsd:element name="DistanceFromScale" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Placement" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="EnableGradient" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="GradientDensity" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Length" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Width" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Shape" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Hidden" type="xsd:string" minOccurs="0"/>
+         <!--TickMarkStyleTypeEnd-->
+         <xsd:element name="Interval" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="IntervalOffset" type="xsd:string" minOccurs="0"/>
+         <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:choice>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+   </xsd:complexType>
+   <xsd:complexType name="ScalePinType">
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+         <!--TickMarkStyleTypeStart-->
+         <xsd:element name="Style" type="StyleType" minOccurs="0"/>
+         <xsd:element name="TickMarkImage" type="TopImageType" minOccurs="0"/>
+         <xsd:element name="DistanceFromScale" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Placement" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="EnableGradient" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="GradientDensity" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Length" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Width" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Shape" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Hidden" type="xsd:string" minOccurs="0"/>
+         <!--TickMarkStyleTypeEnd-->
+         <xsd:element name="Location" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Enable" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="PinLabel" type="PinLabelType" minOccurs="0"/>
+         <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:choice>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+   </xsd:complexType>
+   <xsd:complexType name="PinLabelType">
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+         <xsd:element name="Style" type="StyleType" minOccurs="0"/>
+         <xsd:element name="Text" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="AllowUpsideDown" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="DistanceFromScale" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="FontAngle" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Placement" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="RotateLabel" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="UseFontPercent" type="xsd:string" minOccurs="0"/>
+         <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:choice>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+   </xsd:complexType>
+   <xsd:complexType name="TopImageType">
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+         <!--BaseGaugeImageTypeStart-->
+         <xsd:element name="Source" type="xsd:string" minOccurs="1"/>
+         <xsd:element name="Value" type="xsd:string" minOccurs="1"/>
+         <xsd:element name="MIMEType" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="TransparentColor" type="xsd:string" minOccurs="0"/>
+         <!--BaseGaugeImageTypeEnd-->
+         <xsd:element name="HueColor" type="xsd:string" minOccurs="0"/>
+         <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:choice>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+   </xsd:complexType>
+   <xsd:complexType name="IndicatorImageType">
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+         <!--BaseGaugeImageTypeStart-->
+         <xsd:element name="Source" type="xsd:string" minOccurs="1"/>
+         <xsd:element name="Value" type="xsd:string" minOccurs="1"/>
+         <xsd:element name="MIMEType" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="TransparentColor" type="xsd:string" minOccurs="0"/>
+         <!--BaseGaugeImageTypeEnd-->
+         <xsd:element name="HueColor" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Transparency" type="xsd:string" minOccurs="0"/>
+         <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:choice>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+   </xsd:complexType>
+   <xsd:complexType name="PointerImageType">
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+         <!--BaseGaugeImageTypeStart-->
+         <xsd:element name="Source" type="xsd:string" minOccurs="1"/>
+         <xsd:element name="Value" type="xsd:string" minOccurs="1"/>
+         <xsd:element name="MIMEType" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="TransparentColor" type="xsd:string" minOccurs="0"/>
+         <!--BaseGaugeImageTypeEnd-->
+         <xsd:element name="HueColor" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Transparency" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="OffsetX" type="SizeType" minOccurs="0"/>
+         <xsd:element name="OffsetY" type="SizeType" minOccurs="0"/>
+         <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:choice>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+   </xsd:complexType>
+   <xsd:complexType name="CapImageType">
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+         <!--BaseGaugeImageTypeStart-->
+         <xsd:element name="Source" type="xsd:string" minOccurs="1"/>
+         <xsd:element name="Value" type="xsd:string" minOccurs="1"/>
+         <xsd:element name="MIMEType" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="TransparentColor" type="xsd:string" minOccurs="0"/>
+         <!--BaseGaugeImageTypeEnd-->
+         <xsd:element name="HueColor" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="OffsetX" type="SizeType" minOccurs="0"/>
+         <xsd:element name="OffsetY" type="SizeType" minOccurs="0"/>
+         <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:choice>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+   </xsd:complexType>
+   <xsd:complexType name="FrameImageType">
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+         <!--BaseGaugeImageTypeStart-->
+         <xsd:element name="Source" type="xsd:string" minOccurs="1"/>
+         <xsd:element name="Value" type="xsd:string" minOccurs="1"/>
+         <xsd:element name="MIMEType" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="TransparentColor" type="xsd:string" minOccurs="0"/>
+         <!--BaseGaugeImageTypeEnd-->
+         <xsd:element name="HueColor" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Transparency" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="ClipImage" type="xsd:string" minOccurs="0"/>
+         <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:choice>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+   </xsd:complexType>
+   <xsd:complexType name="BackFrameType">
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+         <xsd:element name="Style" type="StyleType" minOccurs="0"/>
+         <xsd:element name="FrameBackground" type="FrameBackgroundType" minOccurs="0"/>
+         <xsd:element name="FrameImage" type="FrameImageType" minOccurs="0"/>
+         <xsd:element name="FrameStyle" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="FrameShape" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="FrameWidth" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="GlassEffect" type="xsd:string" minOccurs="0"/>
+         <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:choice>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+   </xsd:complexType>
+   <xsd:complexType name="FrameBackgroundType">
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+         <xsd:element name="Style" type="StyleType" minOccurs="0"/>
+      </xsd:choice>
+   </xsd:complexType>
+   <xsd:complexType name="RadialGaugesType">
+      <xsd:sequence>
+         <xsd:element name="RadialGauge" type="RadialGaugeType" minOccurs="1" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+   </xsd:complexType>
+   <xsd:complexType name="LinearGaugesType">
+      <xsd:sequence>
+         <xsd:element name="LinearGauge" type="LinearGaugeType" minOccurs="1" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+   </xsd:complexType>
+   <xsd:complexType name="NumericIndicatorsType">
+      <xsd:sequence>
+         <xsd:element name="NumericIndicator" type="NumericIndicatorType" minOccurs="1" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+   </xsd:complexType>
+   <xsd:complexType name="StateIndicatorsType">
+      <xsd:sequence>
+         <xsd:element name="StateIndicator" type="StateIndicatorType" minOccurs="1" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+   </xsd:complexType>
+   <xsd:complexType name="GaugeImagesType">
+      <xsd:sequence>
+         <xsd:element name="GaugeImage" type="GaugeImageType" minOccurs="1" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+   </xsd:complexType>
+   <xsd:complexType name="GaugeLabelsType">
+      <xsd:sequence>
+         <xsd:element name="GaugeLabel" type="GaugeLabelType" minOccurs="1" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+   </xsd:complexType>
+   <xsd:complexType name="RadialScalesType">
+      <xsd:sequence>
+         <xsd:element name="RadialScale" type="RadialScaleType" minOccurs="1" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+   </xsd:complexType>
+   <xsd:complexType name="LinearScalesType">
+      <xsd:sequence>
+         <xsd:element name="LinearScale" type="LinearScaleType" minOccurs="1" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+   </xsd:complexType>
+   <xsd:complexType name="NumericIndicatorRangesType">
+      <xsd:sequence>
+         <xsd:element name="NumericIndicatorRange" type="NumericIndicatorRangeType" minOccurs="1" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+   </xsd:complexType>
+   <xsd:complexType name="IndicatorStatesType">
+      <xsd:sequence>
+         <xsd:element name="IndicatorState" type="IndicatorStateType" minOccurs="1" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+   </xsd:complexType>
+   <xsd:complexType name="RadialPointersType">
+      <xsd:sequence>
+         <xsd:element name="RadialPointer" type="RadialPointerType" minOccurs="1" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+   </xsd:complexType>
+   <xsd:complexType name="LinearPointersType">
+      <xsd:sequence>
+         <xsd:element name="LinearPointer" type="LinearPointerType" minOccurs="1" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+   </xsd:complexType>
+   <xsd:complexType name="ScaleRangesType">
+      <xsd:sequence>
+         <xsd:element name="ScaleRange" type="ScaleRangeType" minOccurs="1" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+   </xsd:complexType>
+   <xsd:complexType name="CustomLabelsType">
+      <xsd:sequence>
+         <xsd:element name="CustomLabel" type="CustomLabelType" minOccurs="1" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+   </xsd:complexType>
+ 
+  <xsd:complexType name="MapType">
+    <xsd:choice minOccurs="0" maxOccurs="unbounded">
+      <!--ReportItemTypeStart-->
+      <xsd:element name="ActionInfo" type="ActionInfoType" minOccurs="0"/>
+      <xsd:element name="Top" type="SizeType" minOccurs="0"/>
+      <xsd:element name="Left" type="SizeType" minOccurs="0"/>
+      <xsd:element name="Height" type="SizeType" minOccurs="0"/>
+      <xsd:element name="Width" type="SizeType" minOccurs="0"/>
+      <xsd:element name="ZIndex" type="xsd:unsignedInt" minOccurs="0"/>
+      <xsd:element name="Visibility" type="VisibilityType" minOccurs="0"/>
+      <xsd:element name="ToolTip" type="StringLocIDType" minOccurs="0"/>
+      <xsd:element name="DocumentMapLabel" type="StringLocIDType" minOccurs="0"/>
+      <xsd:element name="Bookmark" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="RepeatWith" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="CustomProperties" type="CustomPropertiesType" minOccurs="0"/>
+      <xsd:element name="DataElementName" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="DataElementOutput" minOccurs="0"/>
+      <!--ReportItemTypeEnd-->
+      <xsd:element name="PageBreak" type="PageBreakType" minOccurs="0"/>
+      <xsd:element name="PageName" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="Style" type="StyleType" minOccurs="0"/>
+      <xsd:element name="TileLanguage" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="MapLayers" type="MapLayersType" minOccurs="0"/>
+      <xsd:element name="MapDataRegions" type="MapDataRegionsType" minOccurs="0"/>
+      <xsd:element name="MapViewport" type="MapViewportType" minOccurs="1"/>
+      <xsd:element name="MapLegends" type="MapLegendsType" minOccurs="0"/>
+      <xsd:element name="MapTitles" type="MapTitlesType" minOccurs="0"/>
+      <xsd:element name="MapDistanceScale" type="MapDistanceScaleType" minOccurs="0"/>
+      <xsd:element name="MapColorScale" type="MapColorScaleType" minOccurs="0"/>
+      <xsd:element name="MapBorderSkin" type="MapBorderSkinType" minOccurs="0"/>
+      <xsd:element name="AntiAliasing" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="TextAntiAliasingQuality" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="ShadowIntensity" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="MaximumSpatialElementCount" type="xsd:unsignedInt" minOccurs="0"/>
+      <xsd:element name="MaximumTotalPointCount" type="xsd:unsignedInt" minOccurs="0"/>
+      <xsd:any namespace="##other" processContents="lax"/>
+    </xsd:choice>
+    <xsd:attribute name="Name" type="xsd:normalizedString" use="required"/>
+    <xsd:anyAttribute namespace="##other" processContents="lax"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="MapDataRegionsType">
+    <xsd:sequence>
+      <xsd:element name="MapDataRegion" type="MapDataRegionType" minOccurs="1" maxOccurs="unbounded"/>
+    </xsd:sequence>
+    <xsd:anyAttribute namespace="##other" processContents="lax"/>
+  </xsd:complexType>
+  
+  <xsd:complexType name="MapLayersType">
+    <xsd:choice maxOccurs="unbounded">
+      <xsd:element name="MapTileLayer" type="MapTileLayerType"/>
+      <xsd:element name="MapPolygonLayer" type="MapPolygonLayerType"/>
+      <xsd:element name="MapPointLayer" type="MapPointLayerType"/>
+      <xsd:element name="MapLineLayer" type="MapLineLayerType"/>
+    </xsd:choice>
+    <xsd:anyAttribute namespace="##other" processContents="lax"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="MapLegendsType">
+    <xsd:sequence>
+      <xsd:element name="MapLegend" type="MapLegendType" minOccurs="1" maxOccurs="unbounded"/>
+    </xsd:sequence>
+    <xsd:anyAttribute namespace="##other" processContents="lax"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="MapTitlesType">
+    <xsd:sequence>
+      <xsd:element name="MapTitle" type="MapTitleType" minOccurs="1" maxOccurs="unbounded"/>
+    </xsd:sequence>
+    <xsd:anyAttribute namespace="##other" processContents="lax"/>
+  </xsd:complexType>
+
+
+  <xsd:complexType name="MapDataRegionType">
+    <xsd:choice maxOccurs="unbounded">
+      <xsd:element name="DataSetName" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="Filters" type="FiltersType" minOccurs="0"/>      
+      <xsd:element name="MapMember" type="MapMemberType" minOccurs="0"/>
+      <xsd:any namespace="##other" processContents="lax"/>
+    </xsd:choice>
+    <xsd:attribute name="Name" type="xsd:normalizedString" use="required"/>
+    <xsd:anyAttribute namespace="##other" processContents="lax"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="MapMemberType">
+    <xsd:choice maxOccurs="unbounded">
+      <xsd:element name="Group" type="GroupType" minOccurs="1"/>
+      <xsd:element name="MapMember" type="MapMemberType" minOccurs="0"/>
+      <xsd:any namespace="##other" processContents="lax"/>
+    </xsd:choice>
+    <xsd:anyAttribute namespace="##other" processContents="lax"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="MapTileLayerType">
+    <xsd:choice maxOccurs="unbounded">
+      <!--MapLayerStart-->
+      <xsd:element name="VisibilityMode" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="MinimumZoom" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="MaximumZoom" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="Transparency" type="xsd:string" minOccurs="0"/>
+      <!--MapLayerEnd-->
+      <xsd:element name="TileStyle" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="UseSecureConnection" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="MapTiles" type="MapTilesType" minOccurs="0"/>
+      <xsd:any namespace="##other" processContents="lax"/>
+    </xsd:choice>
+    <xsd:attribute name="Name" type="xsd:normalizedString" use="required"/>
+    <xsd:anyAttribute namespace="##other" processContents="lax"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="MapTilesType">
+    <xsd:sequence>
+      <xsd:element name="MapTile" type="MapTileType" minOccurs="1" maxOccurs="unbounded"/>
+    </xsd:sequence>
+    <xsd:anyAttribute namespace="##other" processContents="lax"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="MapTileType">
+    <xsd:choice maxOccurs="unbounded">
+      <xsd:element name="Name" type="xsd:string" minOccurs="1"/>
+      <xsd:element name="TileData" type="xsd:string" minOccurs="1"/>
+      <xsd:element name="MIMEType" type="xsd:string" minOccurs="1"/>
+      <xsd:any namespace="##other" processContents="lax"/>
+    </xsd:choice>
+    <xsd:anyAttribute namespace="##other" processContents="lax"/>
+  </xsd:complexType>
+
+
+  <xsd:complexType name="MapPolygonLayerType">
+    <xsd:choice maxOccurs="unbounded">
+      <!--MapLayerStart-->
+      <xsd:element name="VisibilityMode" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="MinimumZoom" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="MaximumZoom" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="Transparency" type="xsd:string" minOccurs="0"/>
+      <!--MapLayerEnd-->
+      <!--MapVectorLayerStart-->
+      <xsd:element name="MapDataRegionName" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="MapBindingFieldPairs" type="MapBindingFieldPairsType" minOccurs="0"/>
+      <xsd:element name="MapFieldDefinitions" type="MapFieldDefinitionsType" minOccurs="0"/>
+      <xsd:element name="MapShapefile" type="MapShapefileType" minOccurs="0"/>
+      <xsd:element name="MapSpatialDataSet" type="MapSpatialDataSetType" minOccurs="0"/>
+      <xsd:element name="MapSpatialDataRegion" type="MapSpatialDataRegionType" minOccurs="0"/>
+      <xsd:element name="DataElementName" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="DataElementOutput" minOccurs="0">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Output"/>
+            <xsd:enumeration value="NoOutput"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <!--MapVectorLayerEnd-->
+      <xsd:element name="MapPolygonTemplate" type="MapPolygonTemplateType" minOccurs="0"/>
+      <xsd:element name="MapPolygonRules" type="MapPolygonRulesType" minOccurs="0"/>
+      <xsd:element name="MapMarkerTemplate" type="MapMarkerTemplateType" minOccurs="0"/>
+      <xsd:element name="MapCenterPointRules" type="MapPointRulesType" minOccurs="0"/>
+      <xsd:element name="MapPolygons" type="MapPolygonsType" minOccurs="0"/>
+      <xsd:any namespace="##other" processContents="lax"/>
+    </xsd:choice>
+    <xsd:attribute name="Name" type="xsd:normalizedString" use="required"/>
+    <xsd:anyAttribute namespace="##other" processContents="lax"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="MapPointLayerType">
+    <xsd:choice maxOccurs="unbounded">
+      <!--MapLayerStart-->
+      <xsd:element name="VisibilityMode" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="MinimumZoom" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="MaximumZoom" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="Transparency" type="xsd:string" minOccurs="0"/>
+      <!--MapLayerEnd-->
+      <!--MapVectorLayerStart-->
+      <xsd:element name="MapDataRegionName" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="MapBindingFieldPairs" type="MapBindingFieldPairsType" minOccurs="0"/>
+      <xsd:element name="MapFieldDefinitions" type="MapFieldDefinitionsType" minOccurs="0"/>
+      <xsd:element name="MapShapefile" type="MapShapefileType" minOccurs="0"/>
+      <xsd:element name="MapSpatialDataSet" type="MapSpatialDataSetType" minOccurs="0"/>
+      <xsd:element name="MapSpatialDataRegion" type="MapSpatialDataRegionType" minOccurs="0"/>
+      <xsd:element name="DataElementName" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="DataElementOutput" minOccurs="0">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Output"/>
+            <xsd:enumeration value="NoOutput"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <!--MapVectorLayerEnd-->
+      <xsd:element name="MapMarkerTemplate" type="MapMarkerTemplateType" minOccurs="0"/>
+      <xsd:element name="MapPointRules" type="MapPointRulesType" minOccurs="0"/>
+      <xsd:element name="MapPoints" type="MapPointsType" minOccurs="0"/>
+      <xsd:any namespace="##other" processContents="lax"/>
+    </xsd:choice>
+    <xsd:attribute name="Name" type="xsd:normalizedString" use="required"/>
+    <xsd:anyAttribute namespace="##other" processContents="lax"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="MapLineLayerType">
+    <xsd:choice maxOccurs="unbounded">
+      <!--MapLayerStart-->
+      <xsd:element name="VisibilityMode" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="MinimumZoom" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="MaximumZoom" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="Transparency" type="xsd:string" minOccurs="0"/>
+      <!--MapLayerEnd-->
+      <!--MapVectorLayerStart-->
+      <xsd:element name="MapDataRegionName" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="MapBindingFieldPairs" type="MapBindingFieldPairsType" minOccurs="0"/>
+      <xsd:element name="MapFieldDefinitions" type="MapFieldDefinitionsType" minOccurs="0"/>
+      <xsd:element name="MapShapefile" type="MapShapefileType" minOccurs="0"/>
+      <xsd:element name="MapSpatialDataSet" type="MapSpatialDataSetType" minOccurs="0"/>
+      <xsd:element name="MapSpatialDataRegion" type="MapSpatialDataRegionType" minOccurs="0"/>
+      <xsd:element name="DataElementName" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="DataElementOutput" minOccurs="0">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Output"/>
+            <xsd:enumeration value="NoOutput"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <!--MapVectorLayerEnd-->
+      <xsd:element name="MapLineTemplate" type="MapLineTemplateType" minOccurs="0"/>
+      <xsd:element name="MapLineRules" type="MapLineRulesType" minOccurs="0"/>
+      <xsd:element name="MapLines" type="MapLinesType" minOccurs="0"/>
+      <xsd:any namespace="##other" processContents="lax"/>
+    </xsd:choice>
+    <xsd:attribute name="Name" type="xsd:normalizedString" use="required"/>
+    <xsd:anyAttribute namespace="##other" processContents="lax"/>
+  </xsd:complexType>
+  
+  <xsd:complexType name="MapShapefileType">
+    <xsd:choice maxOccurs="unbounded">
+      <xsd:element name="Source" type="xsd:string" minOccurs="1"/>
+      <xsd:element name="MapFieldNames" type="MapFieldNamesType" minOccurs="0"/>
+      <xsd:any namespace="##other" processContents="lax"/>
+    </xsd:choice>
+    <xsd:anyAttribute namespace="##other" processContents="lax"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="MapSpatialDataSetType">
+    <xsd:choice maxOccurs="unbounded">
+      <xsd:element name="DataSetName" type="xsd:string" minOccurs="1"/>
+      <xsd:element name="SpatialField" type="xsd:string" minOccurs="1"/>
+      <xsd:element name="MapFieldNames" type="MapFieldNamesType" minOccurs="0"/>
+      <xsd:any namespace="##other" processContents="lax"/>                  
+    </xsd:choice>
+    <xsd:anyAttribute namespace="##other" processContents="lax"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="MapSpatialDataRegionType">
+    <xsd:choice maxOccurs="unbounded">
+      <xsd:element name="VectorData" type="xsd:string" minOccurs="1"/>
+    </xsd:choice>
+    <xsd:anyAttribute namespace="##other" processContents="lax"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="MapPolygonsType">
+    <xsd:sequence>
+      <xsd:element name="MapPolygon" type="MapPolygonType" minOccurs="1" maxOccurs="unbounded"/>
+    </xsd:sequence>
+    <xsd:anyAttribute namespace="##other" processContents="lax"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="MapPointsType">
+    <xsd:sequence>
+      <xsd:element name="MapPoint" type="MapPointType" minOccurs="1" maxOccurs="unbounded"/>
+    </xsd:sequence>
+    <xsd:anyAttribute namespace="##other" processContents="lax"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="MapLinesType">
+    <xsd:sequence>
+      <xsd:element name="MapLine" type="MapLineType" minOccurs="1" maxOccurs="unbounded"/>
+    </xsd:sequence>
+    <xsd:anyAttribute namespace="##other" processContents="lax"/>
+  </xsd:complexType>
+
+
+  <xsd:complexType name="MapPolygonType">
+    <xsd:choice maxOccurs="unbounded">
+      <!--MapSpatialElement Start-->
+      <xsd:element name="VectorData" type="xsd:string" minOccurs="1"/>
+      <xsd:element name="MapFields" type="MapFieldsType" minOccurs="0"/>
+      <!--MapSpatialElement End-->
+      <xsd:element name="UseCustomPolygonTemplate" type="xsd:string" minOccurs="0"/>
+    

@@ -1,0 +1,12 @@
+E:\Proyectos Visual Basic\APP_CINES_COMPLETO\APP_CINES_COMPLETO\bin\Debug\APP_CINES_COMPLETO.exe.config
+E:\Proyectos Visual Basic\APP_CINES_COMPLETO\APP_CINES_COMPLETO\bin\Debug\APP_CINES_COMPLETO.exe
+E:\Proyectos Visual Basic\APP_CINES_COMPLETO\APP_CINES_COMPLETO\bin\Debug\APP_CINES_COMPLETO.pdb
+E:\Proyectos Visual Basic\APP_CINES_COMPLETO\APP_CINES_COMPLETO\obj\Debug\APP_CINES_COMPLETO.csprojAssemblyReference.cache
+E:\Proyectos Visual Basic\APP_CINES_COMPLETO\APP_CINES_COMPLETO\obj\Debug\APP_CINES_COMPLETO.FormLogin.resources
+E:\Proyectos Visual Basic\APP_CINES_COMPLETO\APP_CINES_COMPLETO\obj\Debug\APP_CINES_COMPLETO.Properties.Resources.resources
+E:\Proyectos Visual Basic\APP_CINES_COMPLETO\APP_CINES_COMPLETO\obj\Debug\APP_CINES_COMPLETO.csproj.GenerateResource.cache
+E:\Proyectos Visual Basic\APP_CINES_COMPLETO\APP_CINES_COMPLETO\obj\Debug\APP_CINES_COMPLETO.csproj.CoreCompileInputs.cache
+E:\Proyectos Visual Basic\APP_CINES_COMPLETO\APP_CINES_COMPLETO\obj\Debug\APP_CINES_COMPLETO.exe
+E:\Proyectos Visual Basic\APP_CINES_COMPLETO\APP_CINES_COMPLETO\obj\Debug\APP_CINES_COMPLETO.pdb
+E:\Proyectos Visual Basic\APP_CINES_COMPLETO\APP_CINES_COMPLETO\obj\Debug\APP_CINES_COMPLETO.FormVentanaPrincipalAdmin.resources
+E:\Proyectos Visual Basic\APP_CINES_COMPLETO\APP_CINES_COMPLETO\obj\Debug\APP_CINES_COMPLETO.FormABMpeliculas.resources
